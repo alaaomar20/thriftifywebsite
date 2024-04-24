@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* anything related to navbar */
+/* Set the background color to white */
+.navbar.navbar-light.bg-light {
+    background-color: white !important;
+
+}
+
+.navbar-brand {
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.5em;
+    letter-spacing: 0.20em;
+}
+
+.navbar {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.150);
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+    /* Add space between each pair of navigation items */
+}
+
+.nav-link {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+}
+
+header {
+  background: #f8f8f8;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+/* Custom select wrapper and arrow */
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select-wrapper select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  width: 200px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none; /* Remove the default focus outline */
+  background-color: white;
+  -webkit-appearance: none; /* Removes default chrome and safari style */
+  -moz-appearance: none; /* Removes default style Firefox */
+  appearance: none; /* Remove default arrow */
+}
+
+.custom-select-wrapper .custom-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensures clicks on arrow go through to the select element */
+  color: #333; /* Adjust the color as needed */
+  font-size: 12px;
+}
+
+/* Style for the number of items and product grid */
+.item-count {
+  color: #999999;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.product-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.product-card {
+  width: calc(25% - 15px);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  margin:30px;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+  border: 1px solid #ddd
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  ;
+}
+
+.product-info {
+  text-align: left;
+  padding: 5px;
+}
+
+.product-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.product-description {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%;
+  }
+  .custom-select-wrapper .custom-arrow {
+    right: 10px;
+  }
+}
+
+/* footer */
+footer p {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+    opacity: 0.5;
+}
+
+/* related to navbar too */
+/* to hide the icons when we click the toggler */
+@media (max-width: 991.98px) {
+
+    .bi:not(.collapsed) {
+        display: none;
+    }
+}
+
+/* drop down button styling */
+.dropdown .btn {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    border-color: rgba(0, 0, 0, 0.150);
+    background-color: white;
+}

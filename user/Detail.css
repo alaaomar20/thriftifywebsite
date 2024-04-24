@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+ 
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.navbar.navbar-light.bg-light {
+    background-color: white !important;
+
+}
+
+.navbar-brand {
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.5em;
+    letter-spacing: 0.20em;
+}
+
+.navbar {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.150);
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+    /* Add space between each pair of navigation items */
+}
+
+.nav-link {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+}
+
+/* footer */
+footer p {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+    opacity: 0.5;
+}
+
+/* related to navbar too */
+/* to hide the icons when we click the toggler */
+@media (max-width: 991.98px) {
+
+    .bi:not(.collapsed) {
+        display: none;
+    }
+}
+
+/* drop down button styling */
+.dropdown .btn {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    border-color: rgba(0, 0, 0, 0.150);
+    background-color: white;
+}
+
+
+
+.product-detail-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.product-image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Distribute vertically equal */
+  padding-left: 10px; /* Space from the left side */
+  padding-right: 10px; /* Space from the right side */
+}
+
+.product-name, .product-description, .product-price, .size-guide, .add-to-cart, .quantity-selector, .product-description details {
+  text-align: left; /* Align text to the left */
+  margin-bottom: 20px;
+}
+
+.product-description, .product-description p { /* Make the product description grey */
+  color: #7E7F83; /* Medium grey */
+}
+
+.size-selection table { /* Make the size table wider */
+  width: 50%; /* Full width of its container */
+  margin-bottom: 20px; /* Space below the table */
+}
+
+.size-guide {
+    cursor: pointer;
+    display: inline-block; /* Needed for proper alignment of icon and text */
+    transition: color 0.3s; /* Smooth color transition */
+    text-decoration: underline;
+}
+
+.size-guide:hover {
+    color: #7E7F83; /* Grey color on hover */
+}
+
+.size-guide:active {
+    color: #d3d3d3; /* Light grey color on click */
+}
+
+.size-selection td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  text-align: center; /* Center text in each cell */
+}
+
+.quantity-label {
+  font-size: 16px;
+  margin-right: 10px;
+  display: inline-block; /* Aligns with the quantity selector */
+  vertical-align: middle; /* Aligns vertically */
+}
+
+.quantity-selector {
+  display: inline-flex; /* Aligns the buttons and input in a row */
+  align-items: center;
+  background-color: #fff; /* Assuming a white background */
+  border-radius: 20px; /* Large border radius for pill shape */
+  border: 1px solid #ccc; /* Thin border */
+  overflow: hidden; /* Child elements adhere to the border radius */
+  max-width: 160px; /* Maximum width to limit the length of the bar */
+    margin-right: auto; /* Aligns the bar to the left */
+    margin-left: 0; /* Ensures bar stays on the left */
+}
+
+.quantity-selector button,
+.quantity-selector input {
+  padding: 5px 10px; /* Reduced padding to make the overall bar less wide */
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1; /* Aligns the text in the button vertically */
+}
+
+.quantity-selector input {
+  max-width: 40px; /* Adjust as needed to make the input field less wide */
+  text-align: center;
+}
+
+/* Add styles to remove spinners from the input */
+.quantity-selector input[type="number"]::-webkit-inner-spin-button,
+.quantity-selector input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-selector input[type="number"] {
+  -moz-appearance: textfield; /* For Firefox */
+}
+
+.quantity-selector button:hover {
+  background-color: #eaeaea; /* Subtle background color change on hover */
+}
+
+
+
+.add-to-cart-container {
+    text-align: left; /* Aligns the button to the left */
+    margin: 20px 0; /* Space above and below the button */
+}
+
+.add-to-cart-button {
+    display: inline-block; /* Change to inline-block for better control */
+    padding: 6px 22px;
+    background-color: #000;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.add-to-cart-button:active {
+    background-color: #949494; /* Light grey background when clicked */
+}
+
+.product-description details {
+  margin-bottom: 20px;
+}
+
+.product-description summary {
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.product-description summary::-webkit-details-marker {
+  display: none;
+}
+
+.product-description p {
+  padding: 5px 0;
+  color: #5f5f5f;
+}
+
+
+/* Modal (size guide popup) styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Adjusts the vertical position */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%; /* Adjust width to your preference, e.g., 50% */
+  max-width: 1000px; /* Optional: Set a maximum width */
+  height: auto; /* Height is adjusted automatically */
+  overflow: auto; /* Add scroll if the content is too long */
+  
+}
+
+
+.modal-content img {
+  max-width: 100%; /* Ensures the image is not wider than its container */
+  max-height: 80vh; /* Sets a maximum height relative to the viewport height */
+  height: auto; /* Maintains the aspect ratio of the image */
+}
+
+.close {
+  color: #aaa;
+  float: right; /* Change from left to right */
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

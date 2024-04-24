@@ -1,0 +1,81 @@
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  /* height: 100vh; */
+  display: grid;
+  flex-direction: column;
+  background: #ffffff;
+  justify-content: center;
+  letter-spacing: 0.2em;
+  color: #000;
+}
+body {
+  letter-spacing: 0.2em;
+  display: grid;
+}
+.text-success {
+  color: #000;
+  font-family: "Nunito", sans-serif;
+}
+/* anything related to navbar */
+/* Set the background color to white */
+.navbar.navbar-light.bg-light {
+  background-color: white !important;
+}
+
+.navbar-brand {
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+}
+
+.navbar {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+  /* Add space between each pair of navigation items */
+}
+
+.nav-link {
+  font-weight: 300;
+  font-size: 0.85em;
+  letter-spacing: 0.2em;
+}
+
+/* footer */
+footer p {
+  font-weight: 300;
+  font-size: 0.85em;
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+}
+
+/* related to navbar too */
+/* to hide the icons when we click the toggler */
+@media (max-width: 991.98px) {
+  .bi:not(.collapsed) {
+    display: none;
+  }
+}
+
+/* drop down button styling */
+.dropdown .btn {
+  font-weight: 300;
+  font-size: 0.85em;
+  letter-spacing: 0.2em;
+  border-radius: 50px;
+  color: rgb(0, 0, 0);
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: white;
+}

@@ -1,0 +1,140 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Set the background color to white */
+.navbar.navbar-light.bg-light {
+    background-color: white !important;
+
+}
+
+.navbar-brand {
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.5em;
+    letter-spacing: 0.20em;
+}
+
+.navbar {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.150);
+}
+
+/* .navbar-nav {} */
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+    /* Add space between each pair of navigation items */
+}
+
+.nav-link {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    padding: 10px;
+    color: white;
+}
+
+.text1 {
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.text2 {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.text1,
+.text2 {
+    margin-bottom: 10px;
+    /* Adjust spacing between text elements */
+    letter-spacing: 0.20em;
+}
+
+.button .btn {
+    position: absolute;
+    bottom: 8%;
+    /* Adjust button position from the bottom */
+    left: 85%;
+    /* Position the button at the center horizontally */
+    font-weight: 300;
+    font-size: 1em;
+    letter-spacing: 0.20em;
+    border-radius: 70px;
+    color: rgb(0, 0, 0);
+    border-color: rgba(0, 0, 0, 0.150);
+}
+
+.dropdown .btn {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    border-color: rgba(0, 0, 0, 0.150);
+    background-color: white;
+}
+
+.container .card {
+    border: none;
+    margin-top: 10px;
+}
+
+.card .card-body .card-title {
+    font-weight: 500;
+}
+
+.card .card-body .card-text {
+    font-weight: 100;
+}
+
+.card .card-body .card-price {
+    font-weight: 500;
+}
+
+.container h2 {
+    font-weight: 500;
+    letter-spacing: 0.20em;
+    margin-top: 10px;
+}
+
+.container h3 {
+    font-weight: 300;
+    letter-spacing: 0.20em;
+}
+
+.container p {
+    font-weight: 200;
+    letter-spacing: 0.20em;
+}
+
+footer p {
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.20em;
+    opacity: 0.5;
+}
+
+/* to hide the icons when we click the toggler */
+@media (max-width: 991.98px) {
+
+    .bi:not(.collapsed) {
+        display: none;
+    }
+}
+
