@@ -32,6 +32,9 @@ The project uses a MySQL database to store information about users, products and
 1. `users`: Stores information about registered users, including username, email, password, etc.
 2. `products`: Contains details about the items listed for sale, such as name, description, price, etc.
 
+[Database](https://github.com/Codevsun/theriftify/blob/main/theriftifyDB.sql)
+
+
 ## Installation
 
 1. Clone the repository to your local machine.
