@@ -8,9 +8,7 @@ Thriftify is a website project aimed at providing a platform for buying and sell
 - [Features](#features)
 - [Database](#database)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
