@@ -8,16 +8,8 @@
   <meta name="keywords" content="Women's clothing, thrift shop, sustainable fashion, pre-loved clothes, second-hand dresses, affordable fashion, eco-friendly clothing, thrift store" />
   <title>Thrift Shop - Women's Clothing</title>
   <link rel="stylesheet" href="MenWomen.css" />
-  <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -68,11 +60,13 @@
   </nav>
 
   <?php
-  // Include the database connection file
   require_once "db_connection.php";
 
-  // Query to select all products from the database
-  $query = "SELECT * FROM products";
+  // Initialize selected category variable
+  $selectedCategory = $_GET['category'] ?? ''; // Default to 'women' if category is not set
+
+  // Query to select products based on the selected category
+  $query = "SELECT * FROM products WHERE Product_Category = '$selectedCategory'";
   $result = mysqli_query($connection, $query);
 
   // Initialize an array to store product information
@@ -103,7 +97,8 @@
     }
   }
 
-  $queryMaxID = "SELECT COUNT(*) AS max_id FROM products";
+
+  $queryMaxID = "SELECT COUNT(*) AS max_id FROM products WHERE Product_Category = '$selectedCategory'";
   $resultMaxID = mysqli_query($connection, $queryMaxID);
 
   // Initialize a variable to store the maximum ID
@@ -121,6 +116,8 @@
     echo "Error: " . mysqli_error($connection);
   }
 
+
+
   // Close the database connection (optional, as PHP will automatically close it when the script ends)
   mysqli_close($connection);
   ?>
@@ -129,21 +126,15 @@
 
   <!-- Buttons with Dropdown Menus -->
   <div class="d-flex justify-content-between">
-      <div class="dropdown" style="margin-top: 60px">
-        <button
-          class="btn btn-secondary dropdown-toggle m-3"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Women
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item">Women</a></li>
-          <li><a class="dropdown-item" >Men</a></li>
-        </ul>
-      </div>
+    <div style="margin-top: 60px">
+      <select id="categoryDropdown" class="form-select m-3">
+        <option value="men">Men</option>
+        <option value="women">Women</option>
+      </select>
     </div>
+
+
+  </div>
 
 
   <main>
@@ -152,35 +143,36 @@
       <!-- Adjust the number of items as needed -->
     </div>
     <!-- Row grid -->
-    
+
     <div class="product-grid">
-    <?php foreach ($products as $product) : ?>
+      <?php foreach ($products as $product) : ?>
         <div class="product-card">
-            <a href="DetailedPage.php?id=<?php echo $product['id']; ?>">
-                <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>" class="product-image" />
-                <div class="product-info">
-                    <p class="product-name"><?php echo $product['name']; ?></p>
-                    <p class="product-description"><?php echo $product['description']; ?></p>
-                    <p class="product-price">$<?php echo $product['price']; ?></p>
-                </div>
-            </a>
+          <a href="DetailedPage.php?id=<?php echo $product['id']; ?>">
+            <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>" class="product-image" />
+            <div class="product-info">
+              <p class="product-name"><?php echo $product['name']; ?></p>
+              <p class="product-description"><?php echo $product['description']; ?></p>
+              <p class="product-price">$<?php echo $product['price']; ?></p>
+            </div>
+          </a>
         </div>
-    <?php endforeach; ?>
-</div>
+      <?php endforeach; ?>
+    </div>
+
+
+    <script>
+      let selectmenu = document.querySelector('#categoryDropdown');
+      selectmenu.addEventListener('click', function(e) {
+        let selectedCategory = e.target.value;
+        window.location.href = 'Women.php?category=' + selectedCategory;
+      });
+    </script>
 
 
 
-    <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-    crossorigin="anonymous"
-  ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <!-- Footer -->
     <footer class="bg-dark text-light py-3 text-center" style="margin-top: -159">
 
